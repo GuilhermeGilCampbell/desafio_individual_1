@@ -1,0 +1,35 @@
+* {
+    margin : 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between; 
+
+    background-color: #013757;
+    color:white;
+
+    margin-bottom: 5px;
+    display: flex;
+    border-bottom: 15px ridge #013757;
+}
+
+header #Image_Logo {
+    max-height: 100px;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+header .container a {
+    color: white;
+    text-decoration: none;
+}
+
+header .container .dropdown .dropdown-menu li a{
+    color: black;
+}
