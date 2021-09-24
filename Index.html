@@ -5,35 +5,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.jpg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link href="style.css" rel="stylesheet">
-    <title>Model Marvels</title>
+    <script src="Script_filtro.js"></script>
+    <title>Model Marvels - Homepage</title>
 </head>
 
 <body>
+
     <header>
         <!-- Logo -->
         <div>
-            <img id=Image_Logo src="logo.jpg" alt="Logo da Model Marvels, um avião estilizado com nome abaixo">
+            <a href="Index.html"><img id=Image_Logo src="logo.jpg"
+                    alt="Logo da Model Marvels, um avião estilizado com nome abaixo"></a>
         </div>
 
         <div class="container">
             <!-- Departamentos -->
             <div class="dropdown">
-                <a class=" btn dropdown-toggle" href="#" role="button" id="departamentos"
-                    data-bs-toggle="dropdown" aria-expanded="false">
+                <a class=" dropdown-toggle" href="#" role="button" id="departamentos" data-bs-toggle="dropdown"
+                    aria-expanded="false">
                     Departamentos
                 </a>
 
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <li><a class="dropdown-item" href="#">Aviões</a></li>
-                    <li><a class="dropdown-item" href="#">Helicópteros</a></li>
-                    <li><a class="dropdown-item" href="#">Navios</a></li>
+                    <li><a class="dropdown-item" onclick="filterSelection('todos')">Todos</a></li>
+                    <li><a class="dropdown-item" onclick="filterSelection('avioes')">Aviões</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="filterSelection('helicopteros')">Helicópteros</a>
+                    </li>
+                    <li><a class="dropdown-item" href="#" onclick="filterSelection('navios')">Navios</a></li>
                 </ul>
             </div>
             <!-- Institucional -->
-            <a target="_blank" href="">Institucional</a>
+            <a target="" href="Institucional.html">Institucional</a>
 
             <!-- Contato -->
             <a target="_blank" href="">Contato</a>
@@ -42,20 +48,12 @@
 
     <main>
 
-        <!-- Carousel de destaques-->
+        <!-- Carrossel de destaques-->
 
-        <div id="Destaques" class="container-fluid">
+        <div class="container-fluid Destaques">
             <div class="row">
                 <div class="col-12">
                     <div id="Produtos_Destaque" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#Produtos_Destaque" data-bs-slide-to="0"
-                                class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#Produtos_Destaque" data-bs-slide-to="1"
-                                aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#Produtos_Destaque" data-bs-slide-to="2"
-                                aria-label="Slide 3"></button>
-                        </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <img src="Destaques\Community_challenge.jpg" class="d-block w-100"
@@ -89,117 +87,108 @@
         <div id="Produtos" class="container-fluid">
             <div class="row">
 
-
                 <div class="col-xs-12 col-sm-6 col-md-4 col-xl-3 col-lg-3">
-                    <div id="Produto_1" class="card">
-                        <img src="Produtos\Alouette_III_1.jpg" class="card-img-top" alt="Alouette_III da Heller"
-                            width="100%">
+                    <div id="Produto_1" class="card card_do_produto filterDiv helicopteros">
+                        <a href="Spitfire.html"> <img src="Produtos\Alouette_III_1.jpg" class="card-img-top"
+                                alt="Alouette_III da Heller"></a>
                         <div class="card-body">
                             <h5 class="card-title text-center">Alouette III</h5>
-                            <p class="card-text text-center">R$ 190,00</p>
-                            <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">Eu quero</button> -->
+                            <p class="card-text text-center custo">R$ 190,00</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-xs-12 col-sm-6 col-md-4 col-xl-3 col-lg-3">
-                    <div id="Produto_2" class="card">
-                        <img src="Produtos\Constellation_1.jpg" class="card-img-top" alt="Alouette_III da Heller"
-                            width="100%">
+                    <div id="Produto_2" class="card card_do_produto filterDiv avioes">
+                        <a href="Spitfire.html"> <img src="Produtos\Constellation_1.jpg" class="card-img-top"
+                                alt="Contellation da Heller"></a>
                         <div class="card-body">
-                            <h5 class="card-title text-center">Alouette III</h5>
-                            <p class="card-text text-center">R$ 190,00</p>
-                            <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">Eu quero</button> -->
+                            <h5 class="card-title text-center">Constellation</h5>
+                            <p class="card-text text-center custo">R$ 190,00</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-xs-12 col-sm-6 col-md-4 col-xl-3 col-lg-3">
+                    <div id="Produto_4" class="card card_do_produto filterDiv avioes">
+                        <a href="Spitfire.html"> <img src="Produtos\Me109_K-4_1.jpg" class="card-img-top"
+                                alt="BF/ME-109 K-4 da Heller"></a>
+                        <div class="card-body">
+                            <h5 class="card-title text-center">BF/ME-109 K-4</h5>
+                            <p class="card-text text-center custo">R$ 190,00</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-xs-12 col-sm-6 col-md-4 col-xl-3 col-lg-3">
-                    <div id="Produto_3" class="card">
-                        <img src="Produtos\Enterprise_1.jpg" class="card-img-top" alt="Alouette_III da Heller"
-                            width="100%">
+                    <div id="Produto_5" class="card card_do_produto filterDiv avioes">
+                        <a href="Spitfire.html"> <img src="Produtos\Spitfire_Mk.XVIe_1.jpg" class="card-img-top"
+                                alt="Spitifire Mk.XVIe da Heller"></a>
                         <div class="card-body">
-                            <h5 class="card-title text-center">Alouette III</h5>
-                            <p class="card-text text-center">R$ 190,00</p>
-                            <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">Eu quero</button> -->
+                            <h5 class="card-title text-center">Spitifire Mk.XVIe</h5>
+                            <p class="card-text text-center custo">R$ 190,00</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-xs-12 col-sm-6 col-md-4 col-xl-3 col-lg-3">
-                    <div id="Produto_4" class="card">
-                        <img src="Produtos\Me109_K-4_1.jpg" class="card-img-top" alt="Alouette_III da Heller"
-                            width="100%">
+                    <div id="Produto_6" class="card card_do_produto filterDiv helicopteros">
+                        <a href="Spitfire.html"> <img src="Produtos\Super_Puma_1.jpg" class="card-img-top"
+                                alt="Super Puma da Heller"></a>
                         <div class="card-body">
-                            <h5 class="card-title text-center">Alouette III</h5>
-                            <p class="card-text text-center">R$ 190,00</p>
-                            <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">Eu quero</button> -->
+                            <h5 class="card-title text-center">Super Puma</h5>
+                            <p class="card-text text-center custo">R$ 190,00</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-xs-12 col-sm-6 col-md-4 col-xl-3 col-lg-3">
-                    <div id="Produto_5" class="card">
-                        <img src="Produtos\Spitfire_Mk.XVIe.jpg" class="card-img-top" alt="Alouette_III da Heller"
-                            width="100%">
+                    <div id="Produto_7" class="card card_do_produto filterDiv navios">
+                        <a href="Spitfire.html"> <img src="Produtos\TugBoat_1.jpg" class="card-img-top"
+                                alt="Tug Boat da Heller"></a>
                         <div class="card-body">
-                            <h5 class="card-title text-center">Alouette III</h5>
-                            <p class="card-text text-center">R$ 190,00</p>
-                            <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">Eu quero</button> -->
+                            <h5 class="card-title text-center">Tug Boat</h5>
+                            <p class="card-text text-center custo">R$ 190,00</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-xs-12 col-sm-6 col-md-4 col-xl-3 col-lg-3">
-                    <div id="Produto_6" class="card">
-                        <img src="Produtos\Super_Puma_1.jpg" class="card-img-top" alt="Alouette_III da Heller"
-                            width="100%">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Alouette III</h5>
-                            <p class="card-text text-center">R$ 190,00</p>
-                            <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">Eu quero</button> -->
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-4 col-xl-3 col-lg-3">
-                    <div id="Produto_7" class="card">
-                        <img src="Produtos\TugBoat_1.jpg" class="card-img-top" alt="Alouette_III da Heller"
-                            width="100%">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Alouette III</h5>
-                            <p class="card-text text-center">R$ 190,00</p>
-                            <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">Eu quero</button> -->
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-4 col-xl-3 col-lg-3">
-                    <div id="Produto_8" class="card">
-                        <img src="Produtos\Yamato_1.jpg" class="card-img-top" alt="Alouette_III da Heller" width="100%">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Alouette III</h5>
-                            <p class="card-text text-center">R$ 190,00</p>
-                            <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">Eu quero</button> -->
-                        </div>
+                    <div id="Produto_8" class="card card_do_produto filterDiv navios">
+                        <a href="Spitfire.html"> <img src="Produtos\Yamato_1.jpg" class="card-img-top"
+                                alt="IJN Yamato da Heller">
+                            <div class="card-body">
+                        </a>
+                        <h5 class="card-title text-center">IJN Yamato</h5>
+                        <p class="card-text text-center custo">R$ 190,00</p>
                     </div>
                 </div>
             </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4 col-xl-3 col-lg-3">
+                <div id="Produto_3" class="card card_do_produto filterDiv navios">
+                    <a href="Spitfire.html"> <img src="Produtos\Enterprise_1.jpg" class="card-img-top"
+                            alt="USN Enterprise da Heller"></a>
+                    <div class="card-body">
+                        <h5 class="card-title text-center">USN Enterprise</h5>
+                        <p class="card-text text-center custo">R$ 190,00</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
         </div>
 
 
     </main>
 
     <footer>
-
+        <div class="nav-footer">
+            <small class="copyright">Copyright ©&nbsp;1999-2021 Ebazar.com.br LTDA.</small>
+            <a href="https://wa.me/61999999999">Fale conosco</a>
+            <p class="nav-footer-secondaryinfo">CNPJ n.º XX.XXX.XXX/XXXX-XX / Av. Meio do Nada, nº 8.888, ABA, Lugar Nenhum/BR - CEP XXXXX-XXX</p>
+        </div>
     </footer>
 
 
