@@ -1,0 +1,99 @@
+* {
+    margin : 0;
+    padding: 0;
+}
+
+/* Body */
+html, body {
+    background-color: #FFECCB;
+    min-height: 100%;
+}
+
+/* Header */
+    header {
+        display: flex;
+        justify-content: space-between;
+
+        background-color: #013757;
+        color:white;
+
+        margin-bottom: 0px;
+        display: flex;
+        border-bottom: 15px ridge #013757;
+    }
+
+    header #Image_Logo {
+        max-height: 100px;
+    }
+
+    header .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: flex-end;
+    }
+
+    header .container a {
+        color: white;
+        text-decoration: none;
+    }
+
+    header .container a:hover{
+        color:rgb(9, 128, 128);
+        text-decoration: underline;
+    }
+    
+
+    header .container .dropdown .dropdown-menu li a{
+        color: black;
+    }
+/* fim do Header */
+
+/*Main*/
+    main .Galeria_de_Produto .carousel-inner{
+        display: flex;
+        align-items: center;
+        height :400px;
+        max-height: 60vh;
+        background-color: whitesmoke;
+    }
+
+    .Infos_do_Produto{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .Infos_do_Produto h2{
+        text-align: center;
+        margin: 15px;
+    }
+
+    .Infos_do_Produto ul{
+        list-style: none;
+        text-align: left;
+        font-size: 25px;
+    }
+    
+    .Infos_do_Produto .valor{
+        background-color: #eb6e08;
+        width: 50%;
+        text-align: center;
+        padding: 10px;
+        margin: 20px;
+    }
+
+/* fim do Main */
+
+
+/* Footer */
+footer{
+    background-color: #013757;
+    color:white;
+    text-decoration: none;
+}
+
+footer a{
+    text-decoration: none;
+}
