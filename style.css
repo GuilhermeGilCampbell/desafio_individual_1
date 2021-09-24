@@ -38,6 +38,11 @@ html, body {
         text-decoration: none;
     }
 
+    header .container a:hover{
+        color:rgb(9, 128, 128);
+        text-decoration: underline;
+    }
+
     header .container .dropdown .dropdown-menu li a{
         color: black;
     }
@@ -55,7 +60,7 @@ html, body {
 
 /* Galeria */
     .card_do_produto {
-        background-color: #a19d96;
+        background-color: whitesmoke;
         min-height: 100%;
         border-radius: 25px;
         padding-bottom: 10px;
